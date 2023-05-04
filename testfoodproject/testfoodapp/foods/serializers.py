@@ -41,11 +41,12 @@ class FoodSerializer(serializers.ModelSerializer):
 
 
 class FoodDetailsSerializer(FoodSerializer):
+    food = FoodSerializer()
     tags = TagSerializer(many=True)
 
     class Meta:
         model = FoodSerializer.Meta.model
-        fields = FoodSerializer.Meta.fields + ['content', 'tags']
+        fields = FoodSerializer.Meta.fields + ['content', 'tags', 'food']
 
 
 class AuthorizedFoodDetailsSerializer(FoodDetailsSerializer):
