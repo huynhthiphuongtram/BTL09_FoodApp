@@ -28,6 +28,13 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class FoodSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField(source='image')
+
+    def get_image(self, food):
+        if food.image:
+            request = self.context.get('request')
+            return request.build_absolute_uri('/static/%s' % food.image.name) if request else ''
+
     class Meta:
         model = FoodDetail
         fields = ['id', 'name', 'created_date', 'updated_date', 'image']

@@ -4,7 +4,7 @@ from . import views
 
 r = routers.DefaultRouter()
 r.register('food_categories', views.FoodCategoryViewSet, basename='food_category')
-r.register('foods', views.FoodViewSet, basename='food')
+r.register('foods', views.MenuViewSet, basename='food')
 r.register('food_details', views.FoodDetailViewSet, basename='food_detail')
 r.register('users', views.UserViewSet, basename='user')
 r.register('comments', views.CommentViewSet, basename='comment')
