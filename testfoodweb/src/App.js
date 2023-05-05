@@ -9,9 +9,10 @@ import Login from './components/Login';
 import { useReducer } from 'react';
 import userReducer from './reducers/UserReducer';
 import UserContext from './configs/Context';
+import cookie from "react-cookies"
 
 function App() {
-  const [user, dispatch] = useReducer(userReducer,null)
+  const [user, dispatch] = useReducer(userReducer, cookie.load('currrent-user') || null)
 
 
   return (
