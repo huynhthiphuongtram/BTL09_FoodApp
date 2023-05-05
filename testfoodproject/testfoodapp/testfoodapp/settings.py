@@ -47,6 +47,12 @@ INSTALLED_APPS = [
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/foods/"
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    )
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,5 +144,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# client id = z0ma5cE3GahTEm5Iujd4C3i9lL0xaI8PWBLYYIkR
-# client secret = EzzMowE9by6Z2wdvG3BAWH3FSSHG5EOb6QBzJpKr1MSgSC6Ifsm4LSfQYG34H4t9T08tmGErRVXzrWiLpSTiZL5VzpVRqRXCgtS2kdw8D2nUFIoysqO7YjFMkSqkwyrT
+CLIENT_ID = 'z0ma5cE3GahTEm5Iujd4C3i9lL0xaI8PWBLYYIkR'
+CLIENT_SECRET = 'EzzMowE9by6Z2wdvG3BAWH3FSSHG5EOb6QBzJpKr1MSgSC6Ifsm4LSfQYG34H4t9T08tmGErRVXzrWiLpSTiZL5VzpVRqRXCgtS2kdw8D2nUFIoysqO7YjFMkSqkwyrT'

@@ -16,12 +16,14 @@ const Login = () => {
         const process = async () => {
             try {
                 let res = await API.post(endpoints['login'], {
+                    "grant_type": "password",
                     "username": username,
                     "password": password,
                     "client_id": "z0ma5cE3GahTEm5Iujd4C3i9lL0xaI8PWBLYYIkR",
-                    "client_secret": "EzzMowE9by6Z2wdvG3BAWH3FSSHG5EOb6QBzJpKr1MSgSC6Ifsm4LSfQYG34H4t9T08tmGErRVXzrWiLpSTiZL5VzpVRqRXCgtS2kdw8D2nUFIoysqO7YjFMkSqkwyrT",
-                    "grant_type": "password"
-                })
+                    "client_secret": "EzzMowE9by6Z2wdvG3BAWH3FSSHG5EOb6QBzJpKr1MSgSC6Ifsm4LSfQYG34H4t9T08tmGErRVXzrWiLpSTiZL5VzpVRqRXCgtS2kdw8D2nUFIoysqO7YjFMkSqkwyrT"
+                }, {headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }})
 
                 cookie.save('access-token', res.data.access_token)
 
@@ -29,7 +31,7 @@ const Login = () => {
 
                 cookie.save('current-user', user.data)
 
-                // console.info(user.data)
+                console.info(user.data)
 
                 dispatch({
                     "type": "login",
