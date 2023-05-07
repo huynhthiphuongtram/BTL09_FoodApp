@@ -7,7 +7,8 @@ export const endpoints = {
     'stores': '/stores/',
     // 'food_details': (foodId) => `/food_details/${foodId}/`,
     'login': '/o/token/',
-    'current-user': '/users/current-user/'
+    'current-user': '/users/current-user/',
+    'register': '/users/'
 }
 
 export const authAPI = () => axios.create({

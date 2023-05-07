@@ -23,7 +23,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Course API",
+        title="Food API",
         default_version='v1',
         description="APIs for FoodApp",
         contact=openapi.Contact(email="DeTai09@ou.edu.vn"),

@@ -9,7 +9,8 @@ import Login from './components/Login';
 import { useReducer } from 'react';
 import userReducer from './reducers/UserReducer';
 import UserContext from './configs/Context';
-import cookie from "react-cookies"
+import cookie from 'react-cookies';
+import Register from './components/Register';
 
 function App() {
   const [user, dispatch] = useReducer(userReducer, cookie.load('currrent-user') || null)
@@ -24,8 +25,8 @@ function App() {
             <Route path='/' element={<Foods />}/>
             {/* <Route path='/food_details/:Id/' element={<FoodDetails/>} /> */}
             <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
             <Route path='*' element={<h3 className='text-success'>This page doesn't exist...</h3>}/>
-            
           </Routes>
         </Container>
         <Footer />
