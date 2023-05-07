@@ -20,7 +20,7 @@ const Footer = () => {
                 <h4>Danh sách các chi nhánh cửa hàng</h4>
                 <p>
                         {stores.map(s => {
-                                    let url = `/?storeName=${s.name}`
+                                    let url = "https://www.google.com/maps/place/+" + `${s.location}`
                                     return <Link className="nav-link" to={url} href="#link" key={s.id}>{s.name}</Link>
                             })}
                 </p>
