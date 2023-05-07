@@ -30,15 +30,14 @@ const FoodDetails = () => {
                     <Card.Img variant="top" src={details.image} />
                     <Card.Body>
                         <Card.Title>{details.name}</Card.Title>
+                        <p dangerouslySetInnerHTML={{ __html: details.description }}></p>
+                        <p dangerouslySetInnerHTML={{ __html: details.price }}></p>
+                        {/* <Card.Text>{details.description}</Card.Text>
+                        <Card.Text>{details.price}</Card.Text> */}
                         <Button variant="primary">Đặt món</Button>
                     </Card.Body>
                 </Card>
             </div>
-
-            <p dangerouslySetInnerHTML={{ __html: details.description }}></p>
-            <h6>{details.price}</h6>
-            
-
         </>
     )
 }
