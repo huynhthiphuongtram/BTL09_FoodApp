@@ -33,6 +33,7 @@ const Header = () => {
     let userInfo = (
         <>
             <Link to="/login" className="nav-link text-danger">Đăng nhập</Link>
+            <Link to="/register" className="nav-link text-danger">Đăng ký</Link>
         </>
     )
 
@@ -65,7 +66,7 @@ const Header = () => {
                     </Nav>
 
                     <Form className="d-flex" onSubmit={search}>
-                        <Form.Control type="search" placeholder="Tên món ăn..." className="me-2" aria-label="Tìm"
+                        <Form.Control type="search" placeholder="Tìm kiếm ..." className="me-2" aria-label="Tìm"
                                     value={kw} onChange={(e) => setKw(e.target.value)}
                         />
                         <Button type="submit" variant="outline-success">Tìm</Button>

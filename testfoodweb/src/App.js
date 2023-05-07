@@ -10,6 +10,8 @@ import { useReducer } from 'react';
 import userReducer from './reducers/UserReducer';
 import UserContext from './configs/Context';
 import cookie from "react-cookies"
+import Register from './components/Register';
+import FoodDetails from './components/FoodDetails';
 
 function App() {
   const [user, dispatch] = useReducer(userReducer, cookie.load('currrent-user') || null)
@@ -24,7 +26,9 @@ function App() {
             <Route path='/' element={<Foods />}/>
             {/* <Route path='/food_details/:Id/' element={<FoodDetails/>} /> */}
             <Route path='/login' element={<Login />} />
-            <Route path='*' element={<h3 className='text-success'>This page doesn't exist...</h3>}/>
+            <Route path='/foods/:foodId/' element={<FoodDetails/>}/>
+            <Route path='/register' element={<Register />} />
+            <Route path='*' element={<h3 className='text-success m-10'>Trang này không tồn tại...</h3>}/>
             
           </Routes>
         </Container>
