@@ -4,7 +4,7 @@ import { Button, ButtonGroup, Card, Col, Row, Spinner } from "react-bootstrap"
 import { Link, useSearchParams } from "react-router-dom"
 
 const Foods = () => {
-    const [foods, setFoods] = useState([])
+    const [foods, setFoods] = useState(null)
     const [page, setPage] = useState(1)
     const [kw] = useSearchParams()
 
@@ -37,7 +37,7 @@ const Foods = () => {
     const prevPage = () => setPage(current => current - 1)
 
     if (foods == null)
-        return <Spinner animation="grow" variant="primary"/>
+        return <Spinner animation="border" variant="primary" />
 
     return (
         <>
@@ -51,8 +51,9 @@ const Foods = () => {
                                 <Card.Body>
                                     <Card.Title>{f.name}</Card.Title>
                                     <Card.Text>{f.price}</Card.Text>
-                                    <Link to={url} className="btn btn-primary">Xem chi tiết</Link>
-                                    <Link className="btn btn-primary">Thêm vào giỏ</Link>
+                                    <Link to={url} className="btn btn-primary m-2">Xem chi tiết  </Link>
+                                
+                                    <Link  className="btn btn-primary">Thêm vào giỏ</Link>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -60,9 +61,12 @@ const Foods = () => {
                 })}
             </Row>
             <ButtonGroup aria-label="Paginator" className="p-2">
-                <Button onClick={prevPage} variant="success">&#11013;</Button>
-                <Button onClick={nextPage} variant="success">&#10145;</Button>
+                <Button  onClick={prevPage} variant="success">Trang trước</Button>
             </ButtonGroup>
+            <ButtonGroup>
+                 <Button  onClick={nextPage} variant="success">Trang sau</Button>
+            </ButtonGroup>
+
         </>
     )
 }

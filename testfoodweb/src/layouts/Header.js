@@ -66,7 +66,7 @@ const Header = () => {
                     </Nav>
 
                     <Form className="d-flex" onSubmit={search}>
-                        <Form.Control type="search" placeholder="Tên món ăn..." className="me-2" aria-label="Tìm"
+                        <Form.Control type="search" placeholder="Tìm kiếm ..." className="me-2" aria-label="Tìm"
                                     value={kw} onChange={(e) => setKw(e.target.value)}
                         />
                         <Button type="submit" variant="outline-success">Tìm</Button>

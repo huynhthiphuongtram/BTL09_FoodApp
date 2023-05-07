@@ -19,8 +19,8 @@ const Login = () => {
                     "grant_type": "password",
                     "username": username,
                     "password": password,
-                    "client_id": "z0ma5cE3GahTEm5Iujd4C3i9lL0xaI8PWBLYYIkR",
-                    "client_secret": "EzzMowE9by6Z2wdvG3BAWH3FSSHG5EOb6QBzJpKr1MSgSC6Ifsm4LSfQYG34H4t9T08tmGErRVXzrWiLpSTiZL5VzpVRqRXCgtS2kdw8D2nUFIoysqO7YjFMkSqkwyrT"
+                    "client_id": "8nWMcHloiAXvPVXcoHMY9idwcanDdshibONCse5Z",
+                    "client_secret": "yZJHqLKyiXJ2kl51tIeA5xAvaCW1jxXduyHLl3KiNXePdk7jUGS8rq4j6ByYLOU56Nq4avxEuXLmsOYCDEQQ0L8bleOgDJGclpDZKSymkoPGzzu0iPivizDFiK26kcWf"
                 }, {headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }})
