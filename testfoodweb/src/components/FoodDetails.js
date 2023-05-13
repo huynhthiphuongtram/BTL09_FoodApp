@@ -1,30 +1,43 @@
-// import { useEffect, useState } from "react";
-// import API, { endpoints } from "../configs/API";
-// import { Spinner } from "react-bootstrap";
-// import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import API, { authAPI, endpoints } from "../configs/API";
+import { Badge, Spinner } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Placeholder from 'react-bootstrap/Placeholder';
 
 const FoodDetails = () => {
-    // const [details, setDetails] = useState(null)
-    // const {foodId} = useParams()
+    const [details, setDetails] = useState(null)
+    const { foodId } = useParams()
 
-    // useEffect(() => {
-    //     const loadDetails = async () => {
-    //         let res = await API.get(endpoints['details'](foodId))
-    //         setDetails(res.data)
-    //     }
-        
-    //     loadDetails()
-    // }, [])
+    useEffect(() => {
+        const loadDetails = async () => {
+            let res = await authAPI().get(endpoints['fooddetails'](foodId))
+            console.info(res.data)
+            setDetails(res.data)
+        }
+        loadDetails()
+    }, [])
 
-    // if (details === null)
-    //     return <Spinner animation="grow" variant="primary"/>
+    if (details === null)
+        return <Spinner animation="grow" variant="primary" />
 
     return (
         <>
             <h1 className="text-center text-info">Chi tiết món ăn</h1>
-            {/* <ul>
-                {details.map(d => <li>{d.name}</li>)}
-            </ul> */}
+            <div className="d-flex content-around">
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={details.image} />
+                    <Card.Body>
+                        <Card.Title>{details.name}</Card.Title>
+                        <p dangerouslySetInnerHTML={{ __html: details.description }}></p>
+                        <p dangerouslySetInnerHTML={{ __html: details.price }}></p>
+                        {/* <Card.Text>{details.description}</Card.Text>
+                        <Card.Text>{details.price}</Card.Text> */}
+                        <Button variant="primary">Đặt món</Button>
+                    </Card.Body>
+                </Card>
+            </div>
         </>
     )
 }
